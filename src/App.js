@@ -11,6 +11,7 @@ class App extends Component {
       player2: 'Player 2',
       winner: '',
       gameOver: false,
+      message: ''
     }
   }
 
@@ -149,10 +150,10 @@ class App extends Component {
       <>
       <div className="logo">Connect 4</div>
         <header>
-          <span className="header-left"><input className="input_player1" onChange={ this.handleInputPlayer1 } value={ this.state.player1 }></input></span>
-          <span className="header-right"><input className="input_player2" onChange={ this.handleInputPlayer2 } value={ this.state.player2 }></input></span>
+          <span className="header-left"><input className="input_player1" maxLength="30" minLength="1" onChange={ this.handleInputPlayer1 } value={ this.state.player1 }></input></span>
+          <span className="header-right"><input className="input_player2" maxLength="30" minLength="1" onChange={ this.handleInputPlayer2 } value={ this.state.player2 }></input></span>
         </header>
-        <div className="information"><button className="header-button" onClick={ this.initGame }>Start over</button><div className="winner">{ this.state.winner }</div></div>
+        <div className="information"><button className="header-button" onClick={ this.initGame }>Start over</button><div className="winner">{ this.state.winner } {this.state.message } </div></div>
         <div className="board-wrapper">
           <table>
             <tbody>
